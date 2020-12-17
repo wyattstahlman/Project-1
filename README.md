@@ -30,6 +30,7 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly available, in addition to restricting unauthorized access to the network.  Load Balancers protect the availability of data.
+
 The Jump Box VM can be used to connect to other virtual machines within our virtual network.  By allowing only the Jump Box VM connectivity over the internet, we are enhancing security across the rest of our network. We can then use the Jump Box VM to connect to our other virtual machines.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the logs and system traffic.
@@ -52,27 +53,25 @@ The configuration details of each machine may be found below.
 
 The machines on the internal network are not exposed to the public Internet.
 
-Only the Jump-Box-Provisioner machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+Only the Jump-Box-Provisioner machine can accept connections from the Internet. Access to this machine is only allowed from the following IP address:
 
 127.0.0.1
 
 
 Machines within the network can only be accessed by the Jump-Box-Provisioner VM.
-The Jump-Box-Provisioner
-Private IP address: 10.0.0.4
+The Jump-Box-Provisioner private IP address: 10.0.0.4
 
 A summary of the access policies in place can be found in the table below.
 
 | Name                 | Publicly Accessible | Allowed IP Addresses           |
 |----------------------|---------------------|--------------------------------|
-| Jump-Box-Provisioner | Yes                 | 127.0.0.1|
+| Jump-Box-Provisioner | Yes                 | 127.0.0.1                      |
 | Web-1                | No                  | 10.0.0.4                       |
 | Web-2                | No                  | 10.0.0.4                       |
 | ELK2                 | No                  | 10.0.0.4                       |
 ### Elk Configuration
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-Ansible is easy to use and powerful. Ansible can be used to update configurations on multiple servers at once.
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous it limits mistakes. Ansible is easy to use and powerful. Ansible can be used to update configurations on multiple servers at once.
 
 The playbook implements the following tasks:
 
@@ -108,9 +107,9 @@ In order to use the playbook, you will need to have an Ansible control node alre
 
 SSH into the control node and follow the steps below:
 
-- Copy the playbook files to Jump-Box-Provisioner.
+- Copy the playbook files to the Jump-Box-Provisioner VM.
 
-- Update the hosts file to include the private IP addresses of the DVWA servers as well as the private IP of the elkservers:
+- Update the hosts file to include the private IP addresses of the DVWA servers as well as the private IP of the elkserver:
 
 a sample of the hosts file:
 ```
@@ -135,16 +134,13 @@ Run the playbook, and navigate to Web-1 to check that the installation worked as
 
 Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?
 
-You update the Ansible hosts file to run the playbook on specified machines. Within the Ansible hosts file you create two separate groups. One is called [webservers] and the other is called [elkservers]. You then place the private IP addresses of the corresponding servers underneath each group header. Then within the playbook files you can specify whether the playbook should be applied to the webservers or elkservers.
+You update the Ansible hosts file to run the playbook on specified machines. Within the Ansible hosts file you create two separate groups. One is called [webservers] and the other is called [elkservers]. You then place the private IP addresses of the corresponding servers underneath each group header. Then within the playbook files you specify whether the playbook should be applied to the webservers or elkservers group.
 
 Navigate to http://(ELK-Server public IP):5601/app/kibana in order to check that the ELK server is running
 
+Once connected to your jumpbox, make sure the ansible hosts file is up to date
 
 The specific commands the user will need to run to download the playbook:
-
-Once connected to your jumpbox,
-
-make sure the ansible hosts file is up to date
 
 1) $ sudo su
 
