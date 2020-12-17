@@ -1,5 +1,3 @@
-# Project-1
-ELK stack project for Cyber Security Bootcamp
 ## Automated ELK Stack Deployment
 
 The files in this repository were used to configure the network depicted below.
@@ -11,11 +9,8 @@ These files have been tested and used to generate a live ELK deployment on Azure
 
 
 [Install Docker and configure DVWA servers](Ansible/pentest.yml)
-
 [Configure ELK server with docker](Ansible/install-elk.yml)
-
 [Install filebeat on the DVWA VMs](Ansible/filebeat-playbook.yml)
-
 [Install metricbeat on the DVWA VMs](Ansible/metricbeat-playbook.yml)
 
 This document contains the following details:
@@ -136,12 +131,20 @@ You update the Ansible hosts file to run the playbook on specified machines. Wit
 - _Which URL do you navigate to in order to check that the ELK server is running?
 http://(ELK-Server public IP):5601/app/kibana
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
-Once connected to your jumpbox:
-make sure the ansible hosts file is accurate
-$ sudo su
-$ cd/etc/ansible
-$ ansible-playbook pentest.yml
-$ ansible-playbook install-elk.yml
-$ ansible-playbook filebeat-playbook.yml
-$ ansible-playbook metricbeat-playbook.yml
+The specific commands the user will need to run to download the playbook:
+
+Once connected to your jumpbox,
+
+make sure the ansible hosts file is up to date
+
+1) $ sudo su
+
+2) $ cd/etc/ansible
+
+3) $ ansible-playbook pentest.yml
+
+4) $ ansible-playbook install-elk.yml
+
+5) $ ansible-playbook filebeat-playbook.yml
+
+6) $ ansible-playbook metricbeat-playbook.yml
