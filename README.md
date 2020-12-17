@@ -108,7 +108,9 @@ Metricbeat collects host metrics used for monitoring performance, which we can u
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned:
 
 SSH into the control node and follow the steps below:
+
 - Copy the playbook files to Jump-Box-Provisioner.
+
 - Update the hosts file to include the private IP addresses of the DVWA servers as well as the private IP of the elkservers:
 
 a sample of the hosts file:
@@ -122,7 +124,7 @@ a sample of the hosts file:
 10.2.0.4 ansible_python_interpreter=/usr/bin/python3
 ```
 
-- Run the playbook, and navigate to Web-1 to check that the installation worked as expected. After that navigate to Web-2 followed by the ELK server to check that all installations worked as expected.
+Run the playbook, and navigate to Web-1 to check that the installation worked as expected. After that navigate to Web-2 followed by the ELK server to check that all installations worked as expected.
 
 [playbook used to install Docker and configure the Web-1 and Web-2 VMs with the DVWA web app:](Ansible/pentest.yml)
 
@@ -132,7 +134,8 @@ a sample of the hosts file:
 
 [playbook used to set up metricbeat in the DVWA webservers:](Ansible/metricbeat-playbook.yml)
 
-Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
+Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?
+
 You update the Ansible hosts file to run the playbook on specified machines. Within the Ansible hosts file you create two separate groups. One is called [webservers] and the other is called [elkservers]. You then place the private IP addresses of the corresponding servers underneath each group header. Then within the playbook files you can specify whether the playbook should be applied to the webservers or elkservers.
 
 Navigate to http://(ELK-Server public IP):5601/app/kibana in order to check that the ELK server is running
