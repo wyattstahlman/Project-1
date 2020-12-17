@@ -11,8 +11,11 @@ These files have been tested and used to generate a live ELK deployment on Azure
 
 
 [Install Docker and configure DVWA servers](Ansible/pentest.yml)
+
 [Configure ELK server with docker](Ansible/install-elk.yml)
+
 [Install filebeat on the DVWA VMs](Ansible/filebeat-playbook.yml)
+
 [Install metricbeat on the DVWA VMs](Ansible/metricbeat-playbook.yml)
 
 This document contains the following details:
