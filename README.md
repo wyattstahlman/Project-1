@@ -141,7 +141,7 @@ Navigate to http://(ELK-Server public IP):5601/app/kibana in order to check that
 Once connected to your jumpbox, make sure the ansible hosts file is up to date
 
 The specific commands the user will need to run to download the playbook:
-
+```
 1) $ sudo su
 
 2) $ cd/etc/ansible
@@ -153,3 +153,4 @@ The specific commands the user will need to run to download the playbook:
 5) $ ansible-playbook filebeat-playbook.yml
 
 6) $ ansible-playbook metricbeat-playbook.yml
+```
