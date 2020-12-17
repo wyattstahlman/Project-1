@@ -30,6 +30,7 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly available, in addition to restricting unauthorized access to the network.  Load Balancers protect the availability of data.
+
 The Jump Box VM can be used to connect to other virtual machines within our virtual network.  By allowing only the Jump Box VM connectivity over the internet, we are enhancing security across the rest of our network. We can then use the Jump Box VM to connect to our other virtual machines.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the logs and system traffic.
