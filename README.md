@@ -142,15 +142,15 @@ Once connected to your jumpbox, make sure the ansible hosts file is up to date
 
 The specific commands the user will need to run to download the playbook:
 ```
-1) $ sudo su
+$ sudo su
 
-2) $ cd/etc/ansible
+$ cd/etc/ansible
 
-3) $ ansible-playbook pentest.yml
+$ ansible-playbook pentest.yml
 
-4) $ ansible-playbook install-elk.yml
+$ ansible-playbook install-elk.yml
 
-5) $ ansible-playbook filebeat-playbook.yml
+$ ansible-playbook filebeat-playbook.yml
 
-6) $ ansible-playbook metricbeat-playbook.yml
+$ ansible-playbook metricbeat-playbook.yml
 ```
