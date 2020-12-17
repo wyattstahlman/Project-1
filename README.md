@@ -82,7 +82,7 @@ The playbook implements the following tasks:
 4) Use more Memory
 5) Download and launch a docker elk container
 
-The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.(Diagrams/Docker_PS.png)
+[The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance](Diagrams/Docker_PS.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
